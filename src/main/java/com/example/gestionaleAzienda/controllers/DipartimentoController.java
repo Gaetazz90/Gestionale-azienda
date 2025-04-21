@@ -31,7 +31,7 @@ public class DipartimentoController {
         return new ResponseEntity<>(dipartimentoService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity<List<Dipartimento>> getAll() {
         return new ResponseEntity<>(dipartimentoService.getAll(), HttpStatus.OK);
     }

@@ -34,7 +34,7 @@ public class PosizioneLavorativaController {
         return new ResponseEntity<>(posizioneLavorativaService.getPosizione(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity<List<PosizioneLavorativa>> getAll(){
         return new ResponseEntity<>(posizioneLavorativaService.getAll(), HttpStatus.OK);
     }

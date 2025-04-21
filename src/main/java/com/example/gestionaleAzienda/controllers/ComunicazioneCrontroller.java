@@ -29,7 +29,7 @@ public class ComunicazioneCrontroller {
         return new ResponseEntity<>(comunicazioneService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity<List<Comunicazione>> getAll() {
         return new ResponseEntity<>(comunicazioneService.getAll(), HttpStatus.OK);
     }

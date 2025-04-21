@@ -41,7 +41,7 @@ public class NewsController {
         return new ResponseEntity<>( newsService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity <List<NewsResponse>> getAll(){
         return ResponseEntity.ok( newsService.getAll());
     }
@@ -62,7 +62,7 @@ public class NewsController {
         return new ResponseEntity<>(new GenericResponse("News con id: " + id + " eliminata con successo"), HttpStatus.OK);
     }
 
-    @PostMapping("/insert_like")
+    @PostMapping("/{idNews}/dipendente/{idDipendente}/insert/like")
     public ResponseEntity<EntityIdResponse> insertLike(@RequestBody LikeRequest request){
         return new ResponseEntity<>(miPiaceService.mittULike(request), HttpStatus.CREATED);
     }
@@ -72,7 +72,7 @@ public class NewsController {
         return ResponseEntity.ok( miPiaceService.getAllByIdNews(idNews));
     }
 
-    @DeleteMapping("/{idNews}/dipendente/{idDipendente}/delete_like/{idLike}")
+    @DeleteMapping("/{idNews}/dipendente/{idDipendente}/delete/like/{idLike}")
     public ResponseEntity<GenericResponse> deleteLikeById(@PathVariable Long idNews, @PathVariable Long idLike, @PathVariable Long idDipendente){
         miPiaceService.deleteById(idNews, idLike, idDipendente);
         return new ResponseEntity<>(new GenericResponse("Like con id: " + idLike + " eliminato con successo"), HttpStatus.OK);

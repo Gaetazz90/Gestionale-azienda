@@ -33,7 +33,7 @@ public class DipendenteController {
         return new ResponseEntity<>(dipendenteService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity<List<Dipendente>> getAll() {
         return new ResponseEntity<>(dipendenteService.getAll(), HttpStatus.OK);
     }

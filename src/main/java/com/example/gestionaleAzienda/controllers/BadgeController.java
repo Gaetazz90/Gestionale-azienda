@@ -34,7 +34,7 @@ public class BadgeController {
         return new ResponseEntity<>(badgeService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/all")
     public ResponseEntity<List<Badge>> getAll() {
         return new ResponseEntity<>(badgeService.getAll(), HttpStatus.OK);
     }
